@@ -31,7 +31,7 @@
     <delete dir="bin" />
   </target>
   
-  <target name="build" depends="build-project, jar" />
+  <target name="build" depends="build-project, jar, run" />
   
   <target name="cleanall" depends="clean" />
   
@@ -56,5 +56,8 @@
 	</jar>
 </target>
 
+<target name="run">
+        <java jar="lib/runnable.jar" fork="true"/>
+</target>
   
 </project>
