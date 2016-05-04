@@ -19,6 +19,7 @@
   
   <target name="init">
     <mkdir dir="bin" />
+    <mkdir dir="lib" />
     <copy includeemptydirs="false" todir="bin">
       <fileset dir="src">
         <exclude name="**/*.java" />
@@ -30,7 +31,7 @@
     <delete dir="bin" />
   </target>
   
-  <target name="build" depends="build-project" />
+  <target name="build" depends="build-project, jar" />
   
   <target name="cleanall" depends="clean" />
   
@@ -47,9 +48,10 @@
     </javac>
   </target>
   
-  <target name="build-war" depends="build-project">
-    <war destfile="${artifact_dir}/${warname}" basedir="bin" />
-  </target>
+<target name="jar" depends="build-project">
+	<jar destfile="lib/runnable.jar" basedir="bin" includes="**" filesonly="true" >
+	</jar>
+</target>
 
   
 </project>
