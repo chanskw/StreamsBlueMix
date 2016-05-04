@@ -50,6 +50,9 @@
   
 <target name="jar" depends="build-project">
 	<jar destfile="lib/runnable.jar" basedir="bin" includes="**" filesonly="true" >
+	<manifest>
+     	<attribute name="Main-Class" value="HelloWorld"/>
+     </manifest>
 	</jar>
 </target>
 
