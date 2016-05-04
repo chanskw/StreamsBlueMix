@@ -2,8 +2,8 @@
 <project basedir="." default="build" name="StreamsBlueMix">
     
   <property name="debuglevel" value="source,lines,vars" />
-  <property name="target" value="1.5" />
-  <property name="source" value="1.5" />
+  <property name="target" value="1.8" />
+  <property name="source" value="1.8" />
   <property name="warname" value="${ant.project.name}.war" />
   <property environment="env"/>
   <condition property="artifact_dir" value="${env.ARCHIVE_DIR}" else=".">
@@ -37,7 +37,7 @@
     <delete dir="bin" />
   </target>
   
-  <target name="build" depends="build-project,build-war" />
+  <target name="build" depends="build-project" />
   
   <target name="cleanall" depends="clean" />
   
